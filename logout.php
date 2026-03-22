@@ -1,4 +1,4 @@
-<?php
+<?php include 'includes/session.php';
 
 	/* TO-DO: Include session.php to handle login sessions
               Hint: Both header.php and session.php are inside the includes folder
