@@ -1,12 +1,24 @@
-<?php include 'includes/header.php';
-  /* TO-DO: Include header.php
-            Hint: header.php is inside the includes folder and already connects to the database
+<?php
+
+  /* TO-DO: Include database-connection.php to connect to the database
+          Hint: Use require_once to ensure the file is only loaded once.
+                Load this before any redirects or login logic.
+                Both header.php and database-connection.php are inside the includes folder
   */
 
 
 
-if ($logged_in) {                                       // If already logged in
-    header('Location: profile.php');                     // Redirect to profile page
+  /* TO-DO: Include session.php to handle login sessions
+          Hint: Use require_once to avoid redeclaring functions if the file is loaded elsewhere.
+                Load this before any redirects or login logic.
+                Both header.php and session.php are inside the includes folder
+  */
+
+
+
+  
+  if ($logged_in) {                                       // If already logged in  
+    header('Location: profile.php');                     // Redirect to profile page 
     exit;                                               // Stop further code running
 }
 
@@ -32,7 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {         // Check if the form was sub
         header('Location: profile.php');       // Redirect to profile page
         exit;                                 // Stop further code running
     }
-}
+  }
+
+    
+  /* TO-DO: Include header.php
+            Hint: Include this AFTER redirects so that HTML output does not break header() functions.
+                  header.php is inside the includes folder and already connects to the database
+  */
+    
 ?> 
 
 <div id="content" class="login-container animate-bottom">
